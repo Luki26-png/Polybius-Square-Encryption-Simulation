@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #b4b4b4;
+    }
+  </style>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <form>
+    <label for="input_string"><span>Masukkan Pesan :</span></label><br>
+    <input type="text" id="input_string" name="input_string"><br>
+    <button type="button" onclick="encrypt()">Encrypt</button>
+    <button type="button" onclick="decrypt()">Decrypt</button>
+  </form>
+  <section>
+    <h3>Result :</h3>
+    <h4></h4>
+  </section>
+</body>
+
+</html>
