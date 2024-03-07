@@ -1,13 +1,4 @@
 
-/*let a = "12345678";
-const array = [];
-for (let i = 0; i < a.length; i+=2) {
-  array.push(a.substr(i, 2));
-  
-}
-
-console.log(array.toString());*/
-
 const polybiusTabel = [
   [' ', '1', '2', '3', '4', '5'],
   ['1', 'a', 'b', 'c', 'd', 'e'],
@@ -33,10 +24,24 @@ function encrypt(){
     } 
   }
   
-  console.log(result);
+  document.getElementById('result').innerHTML = result;
 }
 
 function decrypt() {
-  let input = document.getElementById("input_string").value;
+  let input = document.getElementById("input_string").value.toLowerCase();
+  let result = "";
 
+  //ubah string angka menjadi array bilangan puluhan
+  const encryptedMessage = [];
+  for (let i = 0; i < input.length; i+=2) {
+    encryptedMessage.push(input.substr(i, 2));
+  }
+
+  for (let i = 0; i < encryptedMessage.length; i++) {
+    let x = encryptedMessage[i][0];
+    let y = encryptedMessage[i][1];
+    result += polybiusTabel[y][x];   
+  }
+
+  document.getElementById('result').innerHTML = result;
 }
