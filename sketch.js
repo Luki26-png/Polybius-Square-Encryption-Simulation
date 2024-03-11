@@ -10,10 +10,26 @@ const polybiusTabel = [
   
 ];
 
+const encryptErrorControl = [
+  'a', 'b', 'c', 'd', 'e',
+  'f', 'g', 'h', 'i', 'j',
+  'k', 'l', 'm', 'n', 'o',
+  'p', 'q', 'r', 's', 't',
+  'u', 'v', 'w', 'x', 'y',
+  'z', ' ', '!', '?', '-'
+]
+
 function encrypt(){
   let input = document.getElementById("input_string").value.toLowerCase();
   let result = "";
 
+  for(let char of input){
+    if (!encryptErrorControl.includes(char)) {
+        window.alert("Masukkan karakter yang terdapat pada tabel kecuali angka untuk melakukan enkripsi");
+        return;
+        break;
+    }
+}
   //encrypt each character
   for(let tempChar of input){
     for (let y = 1; y <= 6; y++){
